@@ -1,0 +1,34 @@
+:root {
+    --color-backgroud:#CAD2C5;
+    --color-backgroud-nav:#2F3E46;
+    --color-text-light:#ffffff;
+    --color-green-dark:#354F52;
+    --color-midle-green:#52796F;
+    --color-green-light:#84A98C;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+
+a{
+    text-decoration: none;
+    transition: 0.2s opacity;
+    font-family: sans-serif;
+}
+
+a:hover{
+    opacity: 0.8;
+}
+
+h1{
+    font-family: sans-serif;
+}
+
+p{
+    font-family: sans-serif;
+}
