@@ -26,6 +26,8 @@
 
 h1 {
     color: aliceblue;
+    font-size: xx-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 p {

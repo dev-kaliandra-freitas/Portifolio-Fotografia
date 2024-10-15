@@ -10,17 +10,29 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@firebase/app-types": "^0.9.2",
+    "@nuxt/fonts": "^0.10.0",
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/google-fonts": "^3.2.0",
+    "firebase": "^10.14.1",
+    "firebase-functions": "^5.1.1",
     "google-fonts": "^1.0.0",
-    "nuxt": "^3.13.0",
+    "nuxt": "^3.13.2",
+    "nuxt-vuefire": "^1.0.4",
     "swiper": "^11.1.14",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "vuefire": "^3.2.0"
   },
   "version": "1.0.0",
   "description": "Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "vue-masonry-css": "^1.0.3"
+  }
 }

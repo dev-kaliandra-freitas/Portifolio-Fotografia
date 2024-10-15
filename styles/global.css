@@ -1,5 +1,13 @@
-:root {
-    --color-backgroud:#CAD2C5;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-background; /* Usa a cor personalizada */
+    @apply text-white; /* Cor do texto (opcional) */
+  }
+/* :root {
+    --color-backgroud:#343A40;
     --color-backgroud-nav:#2F3E46;
     --color-text-light:#ffffff;
     --color-green-dark:#354F52;
@@ -14,6 +22,9 @@
 }
 
 html,
+body{
+    background-color: var(--color-backgroud);
+}
 
 a{
     text-decoration: none;
@@ -31,4 +42,4 @@ h1{
 
 p{
     font-family: sans-serif;
-}
+} */

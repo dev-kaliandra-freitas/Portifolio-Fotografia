@@ -1,19 +1,11 @@
 <template>
-    <div>
-        AQUI VAI FICAR AS IMAGENS DO PORTIFÓLIO
-    </div>
+  <UIHeader></UIHeader>
+    <UIGrid></UIGrid>
 </template>
 
-<script>
-export default {
-    setup () {
-        
-
-        return {}
-    }
-}
+<script setup>
 </script>
 
-<style  scoped>
+<style scoped>
 
 </style>

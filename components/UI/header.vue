@@ -4,16 +4,16 @@
         <h1 id="titulo-barra">KF</h1>
         <ul class="lista">
             <li>
-                <NuxtLink class="custom-link" to="/portifolio">Portifólio</NuxtLink>
+                <NuxtLink class="custom-link font-sans" to="/portifolio">Portifólio</NuxtLink>
             </li>
             <li>
-                <NuxtLink class="custom-link" to="/sobre">Sobre mim</NuxtLink>
+                <NuxtLink class="custom-link font-sans" to="/sobre">Sobre mim</NuxtLink>
             </li>
             <li>
-                <NuxtLink class="custom-link" to="/servicos">Serviços</NuxtLink>
+                <NuxtLink class="custom-link font-sans" to="/servicos">Serviços</NuxtLink>
             </li>
             <li>
-                <NuxtLink class="custom-link" to="/contatos">Contato</NuxtLink>
+                <NuxtLink class="custom-link font-sans" to="/contatos">Contato</NuxtLink>
             </li>
         </ul>
     </div>
