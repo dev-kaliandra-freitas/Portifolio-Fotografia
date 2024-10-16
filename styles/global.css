@@ -5,7 +5,7 @@
 body {
     @apply bg-background; /* Usa a cor personalizada */
     @apply text-white; /* Cor do texto (opcional) */
-  }
+}
 /* :root {
     --color-backgroud:#343A40;
     --color-backgroud-nav:#2F3E46;

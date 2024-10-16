@@ -11,7 +11,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#343A40', // Adiciona a cor personalizada
+        background: '#343A40',
+        gray: '#2C3136'
       },
       fontFamily:{
         serif: ['"Noto Serif JP"', 'serif'], 

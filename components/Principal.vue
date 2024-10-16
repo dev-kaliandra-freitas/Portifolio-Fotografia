@@ -1,6 +1,6 @@
 <template>
     <div class="search-area">
-        <h1 class="title">KALIANDRA FREITAS</h1>
+        <h1 class="title">Kaliandra Freitas</h1>
         <p>FOTOGRAFIA</p>
     </div>
 </template>
@@ -21,7 +21,7 @@
 .title {
     margin-top: 50%;
     margin-bottom: 10px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: 'Cinzel Decorative', serif;
 }
 
 h1 {
@@ -33,6 +33,6 @@ h1 {
 p {
     font-size: large;
     color: aliceblue;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Julius Sans One', sans-serif;
 }
 </style>

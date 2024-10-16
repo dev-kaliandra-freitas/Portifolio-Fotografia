@@ -5,7 +5,7 @@
                 <NuxtLink class="custom-link" to="/">Política de privacidade</NuxtLink>
             </li>
             <li>
-                <NuxtLink class="custom-link" to="/dashboard">Política de Cookies</NuxtLink>
+                <NuxtLink class="custom-link" to="/">Política de Cookies</NuxtLink>
             </li>
         </ul>
         <ul class="copyright">

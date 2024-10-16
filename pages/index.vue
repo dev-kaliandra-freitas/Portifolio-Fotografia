@@ -5,8 +5,6 @@
         </div>
         <div class="principal-container">
             <Principal class="principal">
-                <template>
-                </template>
             </Principal>
         </div>
         <div>
@@ -16,6 +14,13 @@
 </template>
 
 <script>
+export default {
+    setup() {
+        console.log('Home foi montada');
+        return {};
+    }
+}
+
 </script>
 
 <style scoped>
@@ -26,7 +31,7 @@
     background-image: url('/static/background1.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
 }
 
 
