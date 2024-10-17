@@ -10,7 +10,7 @@
             <h1 class="title font-serif text-8xl title">Gallery</h1>
         </div>
 
-        <div class="w-11/12 md:w-3/4 lg:w-2/3 flex flex-col items-center mt-20">
+        <div class="w-11/12 md:w-3/4 lg:w-2/3 flex flex-col items-center md:mt-20 ">
             <div class="masonry-grid">
                 <div v-for="(image, index) in images" :key="index" class="masonry-item" :style="getStyle(image)">
                     <img class="h-auto max-w-full rounded-lg" :src="image.url" alt="Imagem" @load="onImageLoad" />
