@@ -1,39 +1,16 @@
 <template>
-    <div class="relative"> <!-- Adicione esta classe para o posicionamento relativo -->
-        <UIHeader></UIHeader>
-        <div class="flex items-center justify-center min-h-screen">
-            <div class="flex w-4/5 mx-aut">
-                <div class="w-1/2 pr-8">
-                    <h2 class="text-justify">
-                        Olá! Meu nome é Kaliandra de Freitas, e sou apaixonada pela vida através da lente da minha
-                        câmera. Para mim, a fotografia é uma forma de eternizar momentos que, mesmo que se desvanecem em
-                        nossas memórias, permanecem vivos nas imagens que capturamos. As fotos nunca deixam de
-                        transmitir sentimentos profundos e experiências significativas.
-                    </h2>
-                    <h2 class="mt-5">
-                        Dentro dessa arte, exploro diversos temas, incluindo retratos, paisagens, fotografia de eventos
-                        e ensaios fotográficos. Meu objetivo é eternizar os melhores momentos da vida das pessoas,
-                        sempre com uma abordagem detalhista. Procuro enxergar além do que muitos veem, focando nas
-                        pequenas coisas que muitas vezes passam despercebidas, mas que são verdadeiramente especiais.
-                        Acredito que a beleza reside nos detalhes.
-                    </h2>
-                    <h2 class="mt-5">
-                        Viver é uma arte, e as lentes da câmera são apenas ferramentas que utilizo para lembrar e
-                        mostrar aos outros o que pode ser perdido se não olharmos com calma. Capturo a natureza, os
-                        laços afetivos, as celebrações e cada passo significativo da jornada. Espero tocar os corações
-                        através do meu olhar, pois as imagens que crio são uma forma de expressar a beleza e a emoção
-                        que vejo ao meu redor. Os sorrisos, a animação e as palavras de agradecimento que recebo são,
-                        para mim, a maior recompensa.
-                    </h2>
-                    <h2 class="mt-5">
-                        Se você está buscando alguém para eternizar momentos especiais em sua vida, adoraria conversar e
-                        criar algo memorável juntos
-                    </h2>
+    <div class="relative"> <!-- Classe de posicionamento relativo -->
+        <UIHeader v-if="!isMobile"></UIHeader>
+        <UISidebar v-if="isMobile"></UISidebar>
+        <div class="centered-container">
+            <div class="flex-container">
+                <div class="apresentacao">
+                    <UIApresentacao></UIApresentacao>
                 </div>
-                <div class="w-1/2 flex justify-center">
+                <div class="carousel-container">
                     <carousel :autoplay="true" :loop="true" :autoplayTimeout="3000" :wrapAround="true"
                         :transition="2500" :perPage="1" :navigationEnabled="true" :paginationEnabled="true"
-                        :pause-autoplay-on-hover="true" class="carousel-container w-2/5">
+                        :pause-autoplay-on-hover="true" class="carousel-container">
                         <slide v-for="(image, index) in images" :key="index">
                             <img :src="image" class="carousel-image" alt="Carrossel de Imagens" />
                         </slide>
@@ -49,7 +26,6 @@ import 'vue3-carousel/dist/carousel.css';
 import { ref } from 'vue';
 import { Carousel, Slide } from 'vue3-carousel';
 
-
 export default {
     name: 'Sobre',
     components: {
@@ -63,31 +39,89 @@ export default {
             '/images/sobre3.jpg',
         ]);
 
+        const isMobile = ref(false);
+
+        const checkIfMobile = () => {
+            isMobile.value = window.matchMedia("(max-width: 768px)").matches;
+        };
+
+        onMounted(() => {
+            checkIfMobile();
+            window.addEventListener('resize', checkIfMobile);
+        });
+
+        onBeforeUnmount(() => {
+            window.removeEventListener('resize', checkIfMobile);
+        });
+
         return {
             images,
+            isMobile,
         };
     },
 };
 </script>
 
 <style scoped>
+.relative {
+    position: relative;
+}
+
+.centered-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* ou 100% da altura da viewport */
+}
+
+.flex-container {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
 .carousel-container {
-    width: 100%;
-    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    width: 50%;
 }
 
 .carousel-image {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
-.camera-image {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 500px;
-    height: 500px;
-    z-index: 0;
-    opacity: 0.4;
+.apresentacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    padding-right: 0;
+    padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .carousel-container {
+        max-width: 90%;
+    }
+
+    .centered-container {
+        margin-top: 14%;
+    }
+
+    .apresentacao {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 </style>

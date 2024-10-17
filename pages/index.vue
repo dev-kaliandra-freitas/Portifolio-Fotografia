@@ -1,8 +1,9 @@
 <template>
     <div class="home">
         <div>
-            <UIHeader></UIHeader>
+            <UIHeader v-if="!isMobile"></UIHeader>
         </div>
+        <UISidebar v-if="isMobile"></UISidebar>
         <div class="principal-container">
             <Principal class="principal">
             </Principal>
@@ -14,10 +15,28 @@
 </template>
 
 <script>
+
 export default {
-    setup() {
-        console.log('Home foi montada');
-        return {};
+    data() {
+        return {
+            windowWidth: window.innerWidth
+        };
+    },
+    computed: {
+        isMobile() {
+            return this.windowWidth <= 760;
+        }
+    },
+    mounted() {
+        window.addEventListener('resize', this.handleResize);
+    },
+    beforeDestroy() {
+        window.removeEventListener('resize', this.handleResize);
+    },
+    methods: {
+        handleResize() {
+            this.windowWidth = window.innerWidth;
+        }
     }
 }
 
@@ -36,8 +55,24 @@ export default {
 
 
 .principal-container {
+    margin-top: 8%;
     flex: 1;
     padding: 20px;
     overflow-y: auto;
+}
+
+@media (max-width: 760px) {
+    .home {
+        background-image: url('/images/fundoMobile.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .principal-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 </style>

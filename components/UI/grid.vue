@@ -7,7 +7,7 @@
         </div>
 
         <div class="overlay text-center z-10">
-            <h1 class="title font-serif text-8xl">Gallery</h1>
+            <h1 class="title font-serif text-8xl title">Gallery</h1>
         </div>
 
         <div class="w-11/12 md:w-3/4 lg:w-2/3 flex flex-col items-center mt-20">
@@ -67,8 +67,8 @@ const onImageLoad = () => {
 const getStyle = (image) => {
     const rowSpan = image.rowSpan === 0.5 ? '1/2' : image.rowSpan;
     return {
-        gridColumn: `span ${image.colSpan}`, 
-        gridRow: `span ${rowSpan}`,          
+        gridColumn: `span ${image.colSpan}`,
+        gridRow: `span ${rowSpan}`,
     };
 }
 
@@ -132,5 +132,20 @@ img {
 .masonry-item:hover img {
     transform: scale(1.05);
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 760px) {
+    .title {
+        font-size: 1.3cm;
+    }
+
+    .overlay {
+        margin-top: 10%;
+    }
+
+    .masonry-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 }
 </style>
