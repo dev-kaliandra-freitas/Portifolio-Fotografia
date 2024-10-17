@@ -95,5 +95,11 @@ export default {
     #sidebar.active {
         right: 0;
     }
+
+    .icon {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
 }
 </style>

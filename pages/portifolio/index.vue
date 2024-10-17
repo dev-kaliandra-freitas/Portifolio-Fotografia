@@ -7,9 +7,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 const collectionName = ref('imagens');
-const windowWidth = ref(window.innerWidth);
+const windowWidth = ref(0);
 
 const isMobile = computed(() => {
   return windowWidth.value <= 760;

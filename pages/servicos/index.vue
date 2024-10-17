@@ -1,7 +1,8 @@
 <template>
     <div>
-        <UIHeader></UIHeader>
-        <div class="flex flex-col items-center justify-center min-h-screen mt-40">
+        <UIHeader v-if="!isMobile"></UIHeader>
+        <UISidebar v-if="isMobile"></UISidebar>
+        <div class="flex flex-col items-center justify-center min-h-screen md:mt-40 mt-10">
             <NuxtLink to="/casamentos" class="contents">
                 <UICards title="Casamentos" :image="casamentos" :isLeft="true" />
             </NuxtLink>
@@ -37,25 +38,35 @@ const vida = "/images/natureza9.jpg";
 
 export default {
     setup() {
+
+        const isMobile = ref(false);
+
+        const checkIfMobile = () => {
+            isMobile.value = window.matchMedia("(max-width: 768px)").matches;
+        };
+
+        onMounted(() => {
+            checkIfMobile();
+            window.addEventListener('resize', checkIfMobile);
+        });
+
+        onBeforeUnmount(() => {
+            window.removeEventListener('resize', checkIfMobile);
+        });
+
+
         return {
             aniversarios,
             casamentos,
             chaDeBebe,
             esportes,
             ensaios,
-            vida
+            vida,
+            isMobile,
         }
     }
 }
 </script>
 
 <style scoped>
-/* .card-hover {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card-hover:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-} */
 </style>

@@ -8,7 +8,8 @@
                 <NuxtLink class="custom-link" to="/">Política de Cookies</NuxtLink>
             </li>
         </ul>
-        <ul class="copyright" :class="{ 'centralizado': isMobile }"> <!-- Adiciona a classe 'centralizado' se for mobile -->
+        <ul class="copyright" :class="{ 'centralizado': isMobile }">
+            <!-- Adiciona a classe 'centralizado' se for mobile -->
             <li>
                 <NuxtLink class="custom-link" to="/">&copy; 2024 Kaliandra Freitas Developer</NuxtLink>
             </li>
@@ -16,30 +17,26 @@
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            windowWidth: window.innerWidth,
-        };
-    },
-    computed: {
-        isMobile() {
-            return this.windowWidth <= 760;
-        }
-    },
-    mounted() {
-        window.addEventListener('resize', this.handleResize);
-    },
-    beforeDestroy() {
-        window.removeEventListener('resize', this.handleResize);
-    },
-    methods: {
-        handleResize() {
-            this.windowWidth = window.innerWidth;
-        }
-    }
-}
+<script setup>
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+const windowWidth = ref(0);
+
+const isMobile = computed(() => {
+    return windowWidth.value <= 760;
+});
+
+const handleResize = () => {
+    windowWidth.value = window.innerWidth;
+};
+
+
+onMounted(() => {
+    window.addEventListener('resize', handleResize);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener('resize', handleResize);
+});
 </script>
 
 <style scoped>
@@ -100,7 +97,8 @@ ul li {
 
 @media (max-width: 760px) {
     .custom-link {
-        white-space: nowrap; /* Evita quebra de linha no texto em telas menores */
+        white-space: nowrap;
+        /* Evita quebra de linha no texto em telas menores */
     }
 
     #barra-inferior {

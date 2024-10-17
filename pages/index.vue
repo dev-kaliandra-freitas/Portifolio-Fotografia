@@ -15,31 +15,34 @@
 </template>
 
 <script>
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 
 export default {
-    data() {
+    setup() {
+        const windowWidth = ref(0); // Inicializando o width como 0
+
+        const isMobile = computed(() => {
+            return windowWidth.value <= 760;
+        });
+
+        const handleResize = () => {
+            windowWidth.value = window.innerWidth; // Atualiza a largura da janela
+        };
+
+        onMounted(() => {
+            handleResize();
+            window.addEventListener('resize', handleResize);
+        });
+
+        onBeforeUnmount(() => {
+            window.removeEventListener('resize', handleResize);
+        });
+
         return {
-            windowWidth: window.innerWidth
+            isMobile,
         };
     },
-    computed: {
-        isMobile() {
-            return this.windowWidth <= 760;
-        }
-    },
-    mounted() {
-        window.addEventListener('resize', this.handleResize);
-    },
-    beforeDestroy() {
-        window.removeEventListener('resize', this.handleResize);
-    },
-    methods: {
-        handleResize() {
-            this.windowWidth = window.innerWidth;
-        }
-    }
-}
-
+};
 </script>
 
 <style scoped>
