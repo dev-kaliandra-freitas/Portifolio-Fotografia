@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   },
   router: {
     options: {
-      hashMode: true
+      // hashMode: true
     },
   },
   postcss: {
@@ -40,7 +40,7 @@ export default defineNuxtConfig({
           'Cinzel+Decorative': true,
         }
       }
-    ],],
+    ], 'vue3-carousel-nuxt'],
   vuefire: {
     config: {
       apiKey: "AIzaSyD98xl4pdQeXOmiQXF9vyAmcHr4_BP7vK4",

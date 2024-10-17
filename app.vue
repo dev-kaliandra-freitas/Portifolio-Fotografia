@@ -6,6 +6,14 @@
 
 <script>
 import "./styles/global.css";
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faPhone,} from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+// Adiciona o ícone à biblioteca
+library.add(faPhone, faEnvelope, faInstagram, faWhatsapp)
 </script>
 
 <style>

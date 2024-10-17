@@ -1,10 +1,10 @@
 <template>
     <div class="flex items-center justify-center min-h-screen relative mt-20">
-        <!-- Exibe o loader enquanto as imagens estão carregando -->
-        <!-- <div v-if="loading" class="loader absolute inset-0 flex flex-col justify-center items-center z-20">
+
+        <div v-if="loading" class="loader absolute inset-0 flex flex-col justify-center items-center z-20">
             <div class="spinner flex text-sans"></div>
             <p>Carregando...</p>
-        </div> -->
+        </div>
 
         <div class="overlay text-center z-10">
             <h1 class="title font-serif text-8xl">Gallery</h1>
@@ -25,7 +25,7 @@ import { ref, onMounted } from 'vue';
 import { collection, getDocs } from 'firebase/firestore';
 
 const images = ref([]);
-const loading = ref(true); // Estado para controlar o carregamento
+const loading = ref(true);
 let imagesLoaded = 0;
 
 const props = defineProps({
@@ -33,7 +33,7 @@ const props = defineProps({
         type: String,
         required: true
     }
-});// Contador de imagens carregadas
+});
 
 const fetchImages = async () => {
     const db = useNuxtApp().$db;
@@ -55,20 +55,20 @@ const fetchImages = async () => {
     }
 }
 
-// const onImageLoad = () => {
-//     // Incrementa o contador de imagens carregadas
-//     imagesLoaded += 1;
-//     // Verifica se todas as imagens foram carregadas
-//     if (imagesLoaded === images.value.length) {
-//         loading.value = false; // Quando todas estiverem carregadas, esconda o loader
-//     }
-// }
+const onImageLoad = () => {
+
+    imagesLoaded += 1;
+
+    if (imagesLoaded === images.value.length) {
+        loading.value = false;
+    }
+}
 
 const getStyle = (image) => {
     const rowSpan = image.rowSpan === 0.5 ? '1/2' : image.rowSpan;
     return {
-        gridColumn: `span ${image.colSpan}`, // Definindo colSpan
-        gridRow: `span ${rowSpan}`,          // Definindo rowSpan, converte 0.5 para '1/2'
+        gridColumn: `span ${image.colSpan}`, 
+        gridRow: `span ${rowSpan}`,          
     };
 }
 
@@ -120,5 +120,17 @@ img {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.masonry-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.05);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
 }
 </style>
