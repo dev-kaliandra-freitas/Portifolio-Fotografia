@@ -1,5 +1,6 @@
 <template>
     <div>
+        <UIHeader v-if="!isMobile"></UIHeader>
         <UISidebar v-if="isMobile"></UISidebar>
         <UIGrid :collectionName="collectionName"></UIGrid>
     </div>

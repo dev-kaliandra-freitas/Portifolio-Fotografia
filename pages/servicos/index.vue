@@ -18,10 +18,10 @@
             <NuxtLink to="/vida" class="contents">
                 <UICards title="Vida" :image="vida" :isLeft="false" />
             </NuxtLink>
-
+<!-- 
             <NuxtLink to="" class="contents">
                 <UICards title="Aniversários" :image="aniversarios" :isLeft="true" />
-            </NuxtLink>
+            </NuxtLink> -->
 
         </div>
     </div>

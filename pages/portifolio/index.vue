@@ -1,32 +1,37 @@
 <template>
   <div>
     <UIHeader v-if="!isMobile"></UIHeader>
-    <UISidebar></UISidebar>
+    <UISidebar v-if="isMobile"></UISidebar>
     <UIGrid :collectionName="collectionName"></UIGrid>
   </div>
 </template>
 
-<script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+<script>
+import { ref } from 'vue';
 const collectionName = ref('imagens');
-const windowWidth = ref(0);
+export default {
+  setup() {
+    const isMobile = ref(false);
 
-const isMobile = computed(() => {
-  return windowWidth.value <= 760;
-});
+    const checkIfMobile = () => {
+      isMobile.value = window.matchMedia("(max-width: 768px)").matches;
+    };
 
-const handleResize = () => {
-  windowWidth.value = window.innerWidth;
-};
+    onMounted(() => {
+      checkIfMobile();
+      window.addEventListener('resize', checkIfMobile);
+    });
 
+    onBeforeUnmount(() => {
+      window.removeEventListener('resize', checkIfMobile);
+    });
 
-onMounted(() => {
-  window.addEventListener('resize', handleResize);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', handleResize);
-});
+    return {
+      collectionName,
+      isMobile
+    }
+  }
+}
 </script>
 
 <style scoped></style>

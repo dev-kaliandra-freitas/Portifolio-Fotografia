@@ -19,7 +19,7 @@
 
 
 .title {
-    margin-top: 50%;
+    margin-top: 30%;
     margin-bottom: 10px;
     font-family: 'Cinzel Decorative', serif;
 }
@@ -45,7 +45,7 @@ p {
     }
 
     .title {
-        margin-top: 40%;
+        margin-top: 50%;
         font-family: 'Cinzel Decorative', serif;
     }
 
