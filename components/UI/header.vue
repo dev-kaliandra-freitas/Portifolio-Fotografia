@@ -2,7 +2,7 @@
 
     <div id="barra-superior">
         <NuxtLink to="/" class="icon-link">
-            <img class="icon" src="/public/images/logo.png" alt="next icon">
+            <img class="icon" src="/public/images/logoSite.png" alt="next icon">
         </NuxtLink>
         <ul class="lista">
             <li>
@@ -39,6 +39,7 @@ export default {
     width: 100%;
     background-color: transparent;
     padding: 10px 20px;
+    margin-top: 10px;
 }
 
 .lista {
@@ -49,8 +50,8 @@ export default {
 }
 
 .icon {
-    height: 70px;
-    width: 70px;
+    height: 30px;
+    width: 30px;
     margin-right: 10px;
 }
 
