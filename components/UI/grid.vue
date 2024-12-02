@@ -7,7 +7,7 @@
         </div>
 
         <div class="overlay text-center z-10">
-            <h1 class="title font-serif text-8xl title">Gallery</h1>
+            <h1 class="title font-serif text-8xl">Gallery</h1>
         </div>
 
         <div class="w-11/12 md:w-3/4 lg:w-2/3 flex flex-col items-center md:mt-20 ">
@@ -145,6 +145,11 @@ img {
 
     .masonry-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .overlay {
+        z-index: 2;
+        margin-top: 0;
     }
 
 }

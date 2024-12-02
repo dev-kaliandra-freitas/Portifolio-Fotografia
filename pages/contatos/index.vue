@@ -14,14 +14,14 @@
                     <div class="md:mt-0 mt-20 items-start flex flex-col w-4/5">
                         <div class="flex flex-row md:pl-40">
                             <font-awesome-icon :icon="['fab', 'whatsapp']" size="" />
-                            <div class="md:ml-5 ml-2 md:text-2xl text-s text-wrap">Telefone: (67) 00000-0000</div>
+                            <div class="md:ml-5 ml-2 md:text-2xl text-s text-wrap">(67) 98220-2031</div>
                         </div>
                         <div class="flex md:pl-40">
                             <font-awesome-icon :icon="['far', 'envelope']" size="md" />
                             <div class="md:ml-5 ml-2 w-4/5">
                                 <a href="mailto:kaliandrafreitasfotografia@gmail.com"
-                                    class="text-gray-800 no-underline md:text-2xl text-sm w-full">
-                                    kaliandra@gmail.com
+                                    class="text-gray-800  md:text-2xl text-sm w-full">
+                                    kaliandrafotografia@gmail.com
                                 </a>
                             </div>
                         </div>

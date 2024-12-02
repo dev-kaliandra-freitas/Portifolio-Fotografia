@@ -8,7 +8,7 @@
             </NuxtLink>
 
             <NuxtLink to="/chaDeBebe" class="contents">
-                <UICards title="Chá de Bebê" :image="chaDeBebe" :isLeft="false" />
+                <UICards title="Eventos" :image="chaDeBebe" :isLeft="false" />
             </NuxtLink>
 
             <NuxtLink to="/esportes" class="contents">
@@ -30,8 +30,8 @@
 
 <script>
 const aniversarios = "/images/aniversarios.jpg";
-const casamentos = "/images/casamentos.jpg";
-const chaDeBebe = "/images/chaDeBebe.jpg";
+const casamentos = "/images/casamento.jpg";
+const chaDeBebe = "/images/eventos.jpg";
 const esportes = "/images/esportes.jpg";
 const ensaios = "/images/ensaios.jpg";
 const vida = "/images/natureza9.jpg";
