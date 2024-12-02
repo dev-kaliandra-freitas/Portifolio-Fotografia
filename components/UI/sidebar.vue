@@ -2,7 +2,7 @@
     <div>
         <div class="flex justify-between">
             <NuxtLink to="/" class="icon-link">
-                <img class="icon" src="/public/images/logo.png" alt="next icon">
+                <img class="icon" src="/public/images/logoSite.png" alt="next icon">
             </NuxtLink>
             <button class="toggle-button" @click="toggleMenu">
                 &#9776;
@@ -50,12 +50,15 @@ export default {
     padding: 10px;
     cursor: pointer;
     z-index: 1001;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
 }
 
 .icon {
-    height: 70px;
-    width: 70px;
-    margin-right: 10px;
+    height: 10px;
+    width: 10px;
+    padding: 10px;
 }
 
 #sidebar {
