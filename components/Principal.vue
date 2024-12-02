@@ -63,4 +63,23 @@ p {
         font-family: 'Julius Sans One', sans-serif;
     }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .search-area {
+        width: 100%; 
+    }
+
+    .title {
+        margin-top: 5%; 
+        font-size: xx-large;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
 </style>
